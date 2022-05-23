@@ -39,7 +39,7 @@ const crear_anecdota = async (req, res, next) => {
     await anec.save()
 
     // TODO: Mostrar los datos recien creados
-    res.render('anecdota_crear', {item:anec})
+    res.render('anecdota_crear', {item:anec, crear:true})
 }
 
 const editar_anecdota = async (req, res, next) => {
@@ -59,8 +59,8 @@ const editar_anecdota = async (req, res, next) => {
 
     await anec.save()
 
-    // TODO: Mostrar los datos recien creados
-    res.render('anecdota_update', {item:anec})
+    // TODO: Mostrar los datos recien editados
+    res.render('anecdota_update', {item:anec, editar:true})
 
 }
 
