@@ -17,7 +17,7 @@ const lanzarApp  =()=> {
   app.use(express.static('public'))
 
   // Routing
-  const router = require('./routes')
+  const router = require('./src/routes')
   app.use(router)
 
   const port = process.env.PORT || 3000
