@@ -1,4 +1,4 @@
-const model = require('../../models/anecdotas')
+const model = require('../../models/anecdota.model')
 
 const listar_anecdotas = async (req, res, next) => {
     const { query } = req
