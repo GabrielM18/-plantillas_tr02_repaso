@@ -2,14 +2,13 @@
 
 const get_noches = async (req, res) => {
     const { query, params, body } = req
+
     const order = query.order || params.order || 'createdAt'
     let orderBy = {}
     orderBy[order] = 1
 
-
-
     const data = {
-        noches:noches
+        noches:req.body.noches
     }
 
     const comparador = (a, b)=>{

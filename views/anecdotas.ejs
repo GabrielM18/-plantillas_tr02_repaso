@@ -1,0 +1,12 @@
+<% for (var i = 0; i < items.length; i++) { %>
+
+    <%- include('anec_miniatura', items[i]); -%>
+
+    <tr>
+        <td><%= items[i]._id %></td>
+        <td><%= items[i].titulo %></td>
+        <td><%= items[i].descripcion %></td>
+        <td><%= items[i].cuando %></td>
+        <td><%= items[i].persona %></td>
+    </tr>
+<% } %>
