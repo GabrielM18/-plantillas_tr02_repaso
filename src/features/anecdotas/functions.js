@@ -36,7 +36,7 @@ const crear_anecdota = async (req, res, next) => {
         description: desc,
         date       : dateC
     }
-    const anec = new model(data)
+    let anec = new model(data)
 
     anec = await anec.save()
 
