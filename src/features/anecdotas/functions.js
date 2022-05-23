@@ -10,7 +10,7 @@ const listar_anecdotas = async (req, res, next) => {
     const anecs = await model.find().sort(orderBy)
 
     // TODO: Muestrame la lista de anecdotas
-    res.render('anecdotas', {items:anecs} )
+    res.render('anecdotas/listado', {items:anecs} )
 
 }
 
@@ -24,22 +24,23 @@ const detalle_anecdota = async (req, res, next) => {
     }
 
     // TODO: Mostrar Detalle de Anecdota
-    res.render('anecdota', {item:anec})
+    res.render('anecdotas/detalle', {item:anec})
 }
 
 const crear_anecdota = async (req, res, next) => {
     const { body } = req
-    const { titulo, cuerpo } = body
+    const { titulo, description, date } = body
 
     const anec = new model({
         titulo,
-        cuerpo
+        description,
+        date
     })
 
     await anec.save()
 
     // TODO: Mostrar los datos recien creados
-    res.render('anecdota_crear', {item:anec, crear:true})
+    res.render('anecdotas/creado', {item:anec, crear:true})
 }
 
 const editar_anecdota = async (req, res, next) => {
@@ -60,7 +61,7 @@ const editar_anecdota = async (req, res, next) => {
     await anec.save()
 
     // TODO: Mostrar los datos recien editados
-    res.render('anecdota_update', {item:anec, editar:true})
+    res.render('anecdotas/update', {item:anec, editar:true})
 
 }
 
