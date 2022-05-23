@@ -13,15 +13,15 @@ const rPersonaje = require('./features/personaje/routes')
 const rCapitulos = require('./features/capitulos/routes')
 
 router.use('/habilidades', rHabilidades)
-router.use('/raza', rHabilidades)
-router.use('/trabajo', rHabilidades)
-router.use('/relaciones', rHabilidades)
-router.use('/lugares', rHabilidades)
+router.use('/raza', rRaza)
+router.use('/trabajo', rTrabajo)
+router.use('/relaciones', rRelaciones)
+router.use('/lugares', rLugares)
 
-router.use('/persona', rHabilidades)
-router.use('/anecdotas', rHabilidades)
-router.use('/personaje', rHabilidades)
-router.use('/capitulos', rHabilidades)
+router.use('/persona', rPersona)
+router.use('/anecdotas', rAnecdotas)
+router.use('/personaje', rPersonaje)
+router.use('/capitulos', rCapitulos)
 
 
 // .use <- PARA TODO LO QUE NO SE HAYA MANEJADO
