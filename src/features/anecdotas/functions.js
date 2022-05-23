@@ -29,18 +29,23 @@ const detalle_anecdota = async (req, res, next) => {
 
 const crear_anecdota = async (req, res, next) => {
     const { body } = req
-    const { titulo, description, date } = body
+    const { title, desc, dateC } = body
 
-    const anec = new model({
-        titulo,
-        description,
-        date
-    })
+    const data = {
+        titulo     : title,
+        description: desc,
+        date       : dateC
+    }
+    const anec = new model(data)
 
-    await anec.save()
+    anec = await anec.save()
 
     // TODO: Mostrar los datos recien creados
-    res.render('anecdotas/creado', {item:anec, crear:true})
+    const datos =  {
+        item : anec,
+        crear: true
+    }
+    res.render('anecdotas/creado', datos)
 }
 
 const editar_anecdota = async (req, res, next) => {
